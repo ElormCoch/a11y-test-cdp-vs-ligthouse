@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormAutocompleteAttributeEmptyError Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .navigation {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+        .issue-header {
+            border: 1px solid #030303;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .example-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="../index.html">← Landing</a>
+
+    </div>
+
+    <div class="issue-header">
+        <h1>FormAutocompleteAttributeEmptyError</h1>
+        <p><strong>Issue Type:</strong> Page Error</p>
+        <p><strong>Lighthouse Detection:</strong> ❌ Not Detected</p>
+        <p><strong>DevTools CDP Audits Detection</strong> ✅ Detected</p>
+        <p><strong>Test Example:</strong> <a href="https://source.chromium.org/chromium/chromium/src/+/main:components/autofill/content/renderer/form_autofill_issues_browsertest.cc;drc=ada11d3c111c01d4a17f46e8c3b1a947b05ab572;l=110" target="_blank">Chromium Source</a></p>
+        <p><strong>Description:</strong> Form input elements have autocomplete attributes that are empty or contain invalid values. This prevents browsers from properly suggesting autofill values and hinders user experience, especially for users with cognitive disabilities who benefit from form autofill functionality.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>Test Case</h2>
+        
+        <div class="example-container">
+            <p><strong>Issue:</strong> Form elements with empty or invalid autocomplete attributes</p>
+            
+            <form>
+                <div class="form-group">
+                    <input type="text" name="unlabeled-username" placeholder="Username" autocomplete=""> <!-- ERROR: Empty autocomplete -->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

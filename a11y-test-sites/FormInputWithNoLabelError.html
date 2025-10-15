@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormInputWithNoLabelError Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .navigation {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+        .issue-header {
+            border: 1px solid #030303;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .example-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="../index.html">← Landing</a>
+
+    </div>
+
+    <div class="issue-header">
+        <h1>FormInputWithNoLabelError</h1>
+        <p><strong>Issue Type:</strong>Improvement</p>
+        <p><strong>Lighthouse Detection:</strong> ✅ Detected</p>
+        <p><strong>DevTools CDP Audits Detection</strong>  ❌ Not Detected</p>
+        <p><strong>Test Example:</strong> <a href="https://source.chromium.org/chromium/chromium/src/+/main:third_party/devtools-frontend/src/front_end/models/issues_manager/descriptions/genericFormInputWithNoLabelError.md;bpv=1" target="_blank">Chromium Source</a></p>
+        <p><strong>Description:</strong>A form field has neither a valid `aria-labelledby` attribute nor an associated label. This might prevent the browser from autofilling the form.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>Test Case</h2>
+        
+        <div class="example-container">
+            <p><strong>Issue:</strong>Form inputs with no associated labels</p>
+            <form>
+                <input id="test-input" aria-labelledby="">
+            </form>
+        </div>
+        <div>NB: This input field is missing a label, However, it's not detetected by CDP Audits. I've not been able to find a test case or a code reference where it's been dispatched.</div>
+    </div>
+</body>
+</html>

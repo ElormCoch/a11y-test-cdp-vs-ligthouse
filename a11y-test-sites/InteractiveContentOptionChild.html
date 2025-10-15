@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InteractiveContentOptionChild Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .navigation {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+        .issue-header {
+            border: 1px solid #030303;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .example-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+
+        .form-group {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="../index.html">← Landing</a>
+
+    </div>
+
+    <div class="issue-header">
+        <h1>InteractiveContentOptionChild</h1>
+        <p><strong>Issue Type:</strong> Page Error</p>
+        <p><strong>Lighthouse Detection:</strong> ❌ Not Detected</p>
+        <p><strong>DevTools CDP Audits Detection</strong> ✅ Detected</p>
+        <p><strong>Test Example:</strong> <a href="third_party/devtools-frontend/src/test/e2e/resources/issues/select-element-accessibility-issue-InteractiveContentOptionChild.html" target="_blank">Chromium Source</a></p>
+        <p><strong>Description:</strong> Interactive elements (like buttons, links, or form controls) are incorrectly nested within &lt;option&gt; elements of select dropdowns. Option elements should only contain text content to maintain proper dropdown functionality and accessibility.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>Test Case</h2>
+        
+        <div class="example-container">
+            <p><strong>Issue:</strong>An interactive element found as a child of <code>&lt;option&gt;</code></p>
+            <html>
+  <head>
+    <style>
+      select, ::picker(select) {
+        appearance: base-select;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="test-select">Select an option:</label>
+    <select id="test-select">
+      <div>
+        <option>
+          <div tabindex="0"></div>
+        </option>
+      </div>
+    </select>
+  </body>
+</html>
+        </div>
+    </div>
+</body>
+</html>

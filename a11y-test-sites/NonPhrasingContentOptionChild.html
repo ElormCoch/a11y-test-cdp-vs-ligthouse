@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NonPhrasingContentOptionChild Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .navigation {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+        .issue-header {
+            border: 1px solid #030303;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .example-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+
+        .form-group {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="../index.html">← Landing</a>
+
+    </div>
+
+    <div class="issue-header">
+        <h1>NonPhrasingContentOptionChild</h1>
+        <p><strong>Issue Type:</strong> Page Error</p>
+        <p><strong>Lighthouse Detection:</strong>❌ Not Detected </p>
+        <p><strong>DevTools CDP Audits Detection</strong> ✅ Detected</p>
+        <p><strong>Test Example:</strong> <a href="https://source.chromium.org/chromium/chromium/src/+/main:third_party/devtools-frontend/src/test/e2e/resources/issues/select-element-accessibility-issue-NonPhrasingContentOptionChild.html" target="_blank">Chromium Source</a></p>
+        <p><strong>Description:</strong> Non-phrasing content elements (like block-level elements: div, p, h1-h6) are incorrectly nested within &lt;option&gt; elements. Option elements should only contain phrasing content (inline text and simple formatting) to maintain proper dropdown structure and accessibility.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>Test Case</h2>
+        
+        <div class="example-container">
+            <p><strong>Issue:</strong> The option element allows only non-interactive phrasing content, text, and div elements as its children. The semantics of non-phrasing content elements do not make sense as children of an option, and such semantics will largely be ignored by assistive technology since they are inappropriate in this context. Consider removing or changing such elements to one of the allowed phrasing content elements.</p>
+<html>
+  <head>
+    <style>
+      select, ::picker(select) {
+        appearance: base-select;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="test-select">Select an option:</label>
+    <select id="test-select">
+      <option>
+        <article></article>
+      </option>
+    </select>
+  </body>
+</html>
+        </div>
+    </div>
+</body>
+</html>
